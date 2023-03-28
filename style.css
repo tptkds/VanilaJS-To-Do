@@ -37,9 +37,32 @@ ul {
   list-style: none;
   padding: 0px;
   margin-top: 50px;
+  position: relative;
 }
 
 ul li {
   text-decoration: underline;
   margin-top: 10px;
+  text-align: left;
+}
+
+.add {
+  padding: 0;
+  margin-top: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 400px;
+}
+
+.checkbox {
+  position: absolute;
+  right: 0;
 }
