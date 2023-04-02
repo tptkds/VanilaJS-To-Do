@@ -9,8 +9,18 @@ function setTime() {
   const date = new Date();
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  if (hours >= 12) time.innerText = "PM " + (hours % 12) + ":" + minutes;
-  else time.innerText = "AM " + hours + ":" + minutes;
+  if (hours >= 12)
+    time.innerText =
+      "PM " +
+      String(hours % 12).padStart(2, "0") +
+      ":" +
+      String(minutes).padStart(2, "0");
+  else
+    time.innerText =
+      "AM " +
+      String(hours).padStart(2, "0") +
+      ":" +
+      String(minutes).padStart(2, "0");
 }
 
 add_btn.addEventListener("click", () => {
