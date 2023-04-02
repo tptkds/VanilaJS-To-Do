@@ -14,12 +14,32 @@ function setTime() {
 }
 
 add_btn.addEventListener("click", () => {
-  const li = document.createElement("li");
-  li.innerText = text.value;
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.className = "checkbox";
-  li.appendChild(checkbox);
+  window.localStorage.setItem(
+    document.getElementsByTagName("li").length,
+    text.value
+  );
   text.value = "";
-  ul.appendChild(li);
+  renderList();
 });
+
+function renderList() {
+  ul.textContent = "";
+  for (i = 0; i < window.localStorage.length; i++) {
+    const li = document.createElement("li");
+    li.id = window.localStorage.key(i);
+    li.innerText = window.localStorage.getItem(window.localStorage.key(i));
+    const del_btn = document.createElement("button");
+    del_btn.innerText = "x";
+    del_btn.className = "del_btn";
+    li.appendChild(del_btn);
+    ul.appendChild(li);
+  }
+  document.querySelectorAll(".del_btn").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      window.localStorage.removeItem(e.target.parentNode.id);
+      renderList();
+    });
+  });
+}
+
+renderList();

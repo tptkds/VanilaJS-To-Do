@@ -32,18 +32,22 @@ header {
 }
 .list {
   display: flex;
+  height: 290px;
+  overflow: auto;
 }
 ul {
   list-style: none;
   padding: 0px;
-  margin-top: 50px;
+
   position: relative;
+  width: 404px;
 }
 
 ul li {
   text-decoration: underline;
   margin-top: 10px;
   text-align: left;
+  width: 100%;
 }
 
 .add {
@@ -62,7 +66,7 @@ input {
   width: 400px;
 }
 
-.checkbox {
+.del_btn {
   position: absolute;
-  right: 0;
+  right: 35px;
 }
